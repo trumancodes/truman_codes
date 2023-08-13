@@ -6,7 +6,7 @@ export const siteTitle = '</truman.codes>';
 
 export default function Layout({children}) {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="../public/favicon.ico" />
         <meta name="og:title" content={siteTitle} />
@@ -17,6 +17,6 @@ export default function Layout({children}) {
       </main>
       <footer>
       </footer>
-    </div>
+    </>
   );
 }
