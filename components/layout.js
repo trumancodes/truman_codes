@@ -12,7 +12,7 @@ export default function Layout({children}) {
         <meta name="og:title" content={siteTitle} />
       </Head>
       <Header />
-      <main>
+      <main className={styles.mainContainer}>
         {children}
       </main>
       <footer>

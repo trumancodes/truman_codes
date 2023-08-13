@@ -13,9 +13,9 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={styles.sectionWrapper}>
+      <section className={`${styles.heroSection} ${styles.sectionWrapper}`}>
         <Image
-          className={styles.starsL}
+          className={`${styles.stars} ${styles.starsL}`}
           src={starsL}
           alt="Stars and sparkles"
         />
@@ -25,10 +25,13 @@ export default function Home() {
           alt="AI Generated picture of me"
         />
         <Image
-          className={styles.starsR}
+          className={`${styles.stars} ${styles.starsR}`}
           src={starsR}
           alt="Stars and sparkles"
         />
+      </section>
+      <section className={`${styles.sectionWrapper}`}>
+
       </section>
     </Layout>
   );
