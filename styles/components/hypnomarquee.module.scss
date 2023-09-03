@@ -1,0 +1,26 @@
+.hypnoMarqueeSection {
+  cursor: var(--cursor);
+  display: flex;
+  justify-content: center;
+  height: 10vw;
+  background: repeating-radial-gradient(
+    circle at var(--hypno),
+    $black,
+    $black 3vw,
+    $white 3vw, 
+    $white 6vw
+  );
+  font-family: 'VT323', monospace;
+  font-size: 5vw;
+  font-weight: 800;
+
+  .hypnoMarquee {
+    overflow: hidden;
+    mix-blend-mode: difference;
+    pointer-events: none;
+  
+    .hypnoMarqueeText {
+      padding: 0 5vw;
+    }
+  }
+}

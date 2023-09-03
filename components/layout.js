@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from './header.js'
+import Header from './header.js';
 import styles from '../styles/components/layout.module.scss';
 
 export const siteTitle = '</truman.codes>';

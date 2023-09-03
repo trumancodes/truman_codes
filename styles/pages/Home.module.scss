@@ -1,15 +1,13 @@
 .sectionWrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
   overflow: hidden;
-  height: 100vw;
-  max-height: 100vh;
   box-sizing: border-box;
 
-
   &.heroSection {
-    max-height: 94vh;
+    display: flex;
+    justify-content: center;
+    height: 100vw;
+    max-height: 95vh;
     background-color:hsla(207,100%,50%,1);
     background-image:
     radial-gradient(at 94% 91%, hsla(200,100%,70%,1) 0px, transparent 50%),
@@ -19,43 +17,80 @@
     radial-gradient(at 52% 62%, hsla(189,75%,74%,1) 0px, transparent 50%),
     radial-gradient(at 89% 53%, hsla(242,100%,70%,1) 0px, transparent 50%),
     radial-gradient(at 97% 5%, hsla(340,100%,76%,1) 0px, transparent 50%);
+
+    .textLogo {
+      z-index: 99;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'VT323', monospace;
+      font-size: 15vw;
+      line-height: 0;
+      opacity: 0.8;
+    }
+    
+    .stars {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+    
+      height: auto;
+      min-height: 100%;
+      width: 40%;
+      transform: translate(0, -50%);
+      opacity: 0.9;
+    
+      &R {
+        right: 0;
+      }
+    
+      &L {
+        left: 0;
+      }
+    }
+    
+    .aiProfilePic {
+      z-index: 2;
+      height: 100%;
+      width: auto;
+    }
   }
-}
 
-.textLogo {
-  z-index: 99;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'VT323', monospace;
-  font-size: 15vw;
-  line-height: 0;
-  opacity: 0.8;
-}
+  &.aboutInfoSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem 0;
 
-.stars {
-  z-index: 1;
-  position: absolute;
-  top: 50%;
+    .aboutCanvas {
+      position: absolute;
+      z-index: 1;
+      background-color: $red;
+    }
 
-  height: auto;
-  min-height: 100%;
-  width: 40%;
-  transform: translate(0, -50%);
-  opacity: 0.9;
+    .introH2 {
+      z-index: 2;
+      font-family: 'DM sans';
+      font-size: 6vw;
+      margin: 3rem 0;
+      letter-spacing: 2px;
+      font-weight: 800;
+      pointer-events: none;
+    }
 
-  &R {
-    right: 0;
+    .textBlock {
+      z-index: 2;
+      margin: 0 0 2rem;
+      width: 50vw;
+      font-family: 'DM Mono';
+      line-height: 1.75;
+      font-size: 1.25rem;
+      pointer-events: none;
+    }
   }
-
-  &L {
-    left: 0;
-  }
-}
-
-.aiProfilePic {
-  z-index: 2;
-  height: 100%;
-  width: auto;
 }
