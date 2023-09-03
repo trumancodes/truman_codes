@@ -70,7 +70,13 @@
     .aboutCanvas {
       position: absolute;
       z-index: 1;
-      background-color: $red;
+    }
+
+    .waveEmoji {
+      display: inline-block;
+      height: 6vw;
+      width: 6vw;
+      margin: 0 1.5rem;
     }
 
     .introH2 {
@@ -80,7 +86,6 @@
       margin: 3rem 0;
       letter-spacing: 2px;
       font-weight: 800;
-      pointer-events: none;
     }
 
     .textBlock {
@@ -90,7 +95,6 @@
       font-family: 'DM Mono';
       line-height: 1.75;
       font-size: 1.25rem;
-      pointer-events: none;
     }
   }
 }

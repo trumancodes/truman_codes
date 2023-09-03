@@ -12,10 +12,20 @@ export default function EmojiCanvas(props) {
 
   const canvasRef = useRef(null);
 
+  console.log(props)
+
   useEffect(() => {
+
     const canvas = canvasRef.current;
     const parent = canvas.parentElement;
-
+    const Engine = Matter.Engine,
+          Render = Matter.Render,
+          World = Matter.World,
+          Bodies = Matter.Bodies,
+          MouseConstraint = Matter.MouseConstraint,
+          Mouse = Matter.Mouse,
+          Composite = Matter.Composite;
+          
     setWindowW(parent.offsetWidth);
     setWindowH(parent.offsetHeight);
 
@@ -25,17 +35,8 @@ export default function EmojiCanvas(props) {
       timeout = setTimeout(handleResize(parent), 250);
     });
 
-    const Engine = Matter.Engine,
-          Render = Matter.Render,
-          World = Matter.World,
-          Bodies = Matter.Bodies,
-          MouseConstraint = Matter.MouseConstraint,
-          Mouse = Matter.Mouse,
-          Composite = Matter.Composite;
-
     const engine = Engine.create();
     const context = canvas.getContext('2d');
-
     const render = Render.create({
       canvas: canvas,
       engine: engine,
@@ -52,26 +53,7 @@ export default function EmojiCanvas(props) {
     const leftWall = Bodies.rectangle(-26, parent.offsetHeight+26, 50, parent.offsetHeight*3, { isStatic: true }, {fillStyle: 'transparent'});
     const rightWall = Bodies.rectangle(parent.offsetWidth+26, parent.offsetHeight+26, 50, parent.offsetHeight*3, { isStatic: true }, {fillStyle: 'transparent'});
     World.add(engine.world, [ground, leftWall, rightWall]);
-
-    const emojis = ['👩‍🔧', '👑', '💼', '🏖️', '💻', '📈', '🎯', '💡', '🎵', '🎨', '🖥️', '🗝️', '🌍', '📚', '🎮', '☀️', '📋', '🖼️', '🎶', '🌱', '🧱'];
     
-    emojis.forEach(emoji => {
-      const emojiBody = Bodies.circle(200, 0, 40, {
-        frictionAir: 0.01,
-        restitution: 0.5,
-        friction: 0.6,
-        render: {
-          sprite: {
-            texture: `https://emojicdn.elk.sh/${emoji}`,
-            xScale: 1,
-            yScale: 1
-          }
-        }
-      });
-  
-      World.add(engine.world, [emojiBody]);
-    });
-
     const mouse = Mouse.create(render.canvas),
     mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
@@ -85,11 +67,46 @@ export default function EmojiCanvas(props) {
 
     mouseConstraint.mouse.element.removeEventListener("mousewheel", mouseConstraint.mouse.mousewheel);
     mouseConstraint.mouse.element.removeEventListener("DOMMouseScroll", mouseConstraint.mouse.mousewheel);
-
     Composite.add(engine.world, mouseConstraint);
 
-    context.fillStyle = 'hsla(242,100%,70%,1)';
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+    const emojiSpots = [...document.getElementsByClassName('emojiSpot')];
+    const usedEmojis = [];
+
+    const randomNumber = (max, min) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+  
+    emojiSpots.forEach(emojiSpot => {
+      emojiSpot.addEventListener('mouseover', (e) => {
+        let dropSpot = 0
+
+        if (e.clientX <= window.innerWidth / 2) {
+          dropSpot = randomNumber(0, (window.innerWidth / 4) - 50);
+        } else {
+          dropSpot = randomNumber((window.innerWidth - window.innerWidth / 4) + 50, window.innerWidth);
+        }
+
+        const emoji = emojiSpot.dataset.emoji
+
+        if (!usedEmojis.includes(emoji)) {
+          const emojiBody = Bodies.circle(dropSpot, 0, 50, {
+            frictionAir: 0.01,
+            restitution: 0.5,
+            friction: 0.6,
+            render: {
+              sprite: {
+                texture: `https://emojicdn.elk.sh/${emoji}`,
+                xScale: .75,
+                yScale: .75
+              }
+            }
+          });
+      
+          World.add(engine.world, [emojiBody]);
+          usedEmojis.push(emoji);
+        }
+      });
+    });
   }, [])
   
   return (
