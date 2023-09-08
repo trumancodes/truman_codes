@@ -10,7 +10,7 @@ export default function Header() {
         &lt;/truman.codes&gt;
       </h1>
       <menu>
-        About Work People Contact
+        About Contact
       </menu>
     </header>
   );
