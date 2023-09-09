@@ -12,8 +12,6 @@ export default function EmojiCanvas(props) {
 
   const canvasRef = useRef(null);
 
-  console.log(props)
-
   useEffect(() => {
 
     const canvas = canvasRef.current;
