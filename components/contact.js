@@ -21,7 +21,7 @@ const colorPairs = [
 
 const initRandomPair = colorPairs[Math.floor(Math.random() * colorPairs.length)];
 
-export default function Contact({className, ...props}) {
+export default function Contact() {
 
   const [curentPrimary, setPrimary] = useState(initRandomPair[0]);
   const [curentSecondary, setSecondary] = useState(initRandomPair[1]);
@@ -53,9 +53,8 @@ export default function Contact({className, ...props}) {
 
   return (
     <section
-      className={`${styles.contactSection} ${className}`}
+      className={styles.contactSection}
       style={{ '--primary': curentPrimary, '--secondary': curentSecondary }}
-      {...props}
     >
       <span className={styles.contactFrame}>
         <h2 className={styles.contactH2}>Want to work together?</h2>

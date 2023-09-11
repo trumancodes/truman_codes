@@ -1,5 +1,4 @@
 import styles from '../styles/components/header.module.scss';
-
 export const siteTitle = '</truman.codes>';
 
 export default function Header() {

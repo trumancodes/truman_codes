@@ -21,7 +21,7 @@ export default function HypnoMarquee() {
     } else {
       setAllowMove('none')
     }
-  }
+  };
 
   return (
     <section

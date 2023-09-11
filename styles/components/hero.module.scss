@@ -1,31 +1,32 @@
 .heroSection {
   position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
   box-sizing: border-box;
-  height: 100vw;
-  max-height: 95vh;
-  background-color:hsla(207,100%,50%,1);
-  background-image:
-  radial-gradient(at 94% 91%, hsla(200,100%,70%,1) 0px, transparent 50%),
-  radial-gradient(at 16% 7%, hsla(200,100%,70%,1) 0px, transparent 50%),
-  radial-gradient(at 0% 32%, hsla(125,89%,65%,1) 0px, transparent 50%),
-  radial-gradient(at 25% 67%, hsla(200,100%,70%,1) 0px, transparent 50%),
-  radial-gradient(at 52% 62%, hsla(189,75%,74%,1) 0px, transparent 50%),
-  radial-gradient(at 89% 53%, hsla(242,100%,70%,1) 0px, transparent 50%),
-  radial-gradient(at 97% 5%, hsla(340,100%,76%,1) 0px, transparent 50%);
+  height: 95vh;
 
-  .textLogo {
-    z-index: 99;
+  .gradientBG {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'VT323', monospace;
-    font-size: 15vw;
-    line-height: 0;
-    opacity: 0.8;
+    top: -5vh;
+    height: 100vh;
+    width: 100%;
+    background-color:hsla(207,100%,50%,1);
+    background-image:
+    radial-gradient(at 94% 91%, hsla(200,100%,70%,1) 0px, transparent 50%),
+    radial-gradient(at 16% 7%, hsla(200,100%,70%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 32%, hsla(125,89%,65%,1) 0px, transparent 50%),
+    radial-gradient(at 25% 67%, hsla(200,100%,70%,1) 0px, transparent 50%),
+    radial-gradient(at 52% 62%, hsla(189,75%,74%,1) 0px, transparent 50%),
+    radial-gradient(at 89% 53%, hsla(242,100%,70%,1) 0px, transparent 50%),
+    radial-gradient(at 97% 5%, hsla(340,100%,76%,1) 0px, transparent 50%);
+    transform: translateY(5vh);
+  }
+
+  .cropBox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
   }
   
   .stars {
@@ -33,23 +34,24 @@
     position: absolute;
     top: 50%;
     height: auto;
-    min-height: 100%;
     width: 40%;
     transform: translate(0, -50%);
-    opacity: 0.9;
+    opacity: 0;
   
     &R {
-      right: 0;
+      right: -40px;
     }
   
     &L {
-      left: 0;
+      left: -40px;
     }
   }
   
   .aiProfilePic {
     z-index: 2;
-    height: 100%;
+    position: relative;
+    height: 105%;
     width: auto;
+    opacity: 0;
   }
 }
