@@ -1,0 +1,129 @@
+.contactSection {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  padding: 85px;
+  background-color: var(--primary);
+
+  .contactH2 {
+    z-index: 2;
+    font-family: 'DM sans';
+    font-size: 4vw;
+    letter-spacing: .05vw;
+    font-weight: 800;
+  }
+
+  .copyButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: inherit;
+    border: $white 2px solid;
+    margin: 2rem 0 2rem;
+    padding: 1rem 1.5rem;
+    font-family: 'VT323', monospace;
+    font-size: 6vw;
+    font-style: normal;
+    outline: inherit;
+    transition: background-color 0.1s linear, font-style 0.1s linear;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border: $white 2px dashed;
+      transition: top 0.1s linear, left 0.1s linear;
+    }
+
+    &:hover {
+      font-style: italic;
+
+      &::after {
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    &:active {
+      background-color: var(--primary);
+    }
+  }
+
+  .copyText {
+    display: block;
+    position: absolute;
+    bottom: -4rem;
+    cursor: pointer;
+    font-family: 'DM Mono';
+    font-size: 1rem;
+    font-style: normal;
+  }
+
+  .shuffleButton {
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0;
+    mix-blend-mode: overlay;
+    opacity: 0.3;
+    transition: padding-bottom 0.1s linear, opacity 0.1s linear;
+
+    &:hover {
+      padding-bottom: 5px;
+      opacity: 0.5;
+    }
+
+    &:active {
+      padding-bottom: 8px;
+      opacity: 0.7;
+    }
+  }
+
+  .contactFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow:
+    0 0 0 5px $white,
+    0 0 0 9px var(--primary),
+    0 0 0 13px $white,
+    0 0 0 23px var(--primary),
+    0 0 0 25px $white,
+    0 0 0 30px var(--primary),
+    0 0 0 34px $white;
+    background: var(--secondary);
+    z-index: 1;
+
+    &::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      border-radius: 50%;
+      border: $white dotted 5px;
+    }
+  }
+}

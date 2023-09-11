@@ -1,0 +1,76 @@
+.aboutInfoSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  padding: 3rem 0;
+
+  .aboutCanvas {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .aboutWave {
+    display: inline-block;
+    height: 6vw;
+    width: 6vw;
+    margin: 0 1.5rem;
+  }
+
+  .aboutH2 {
+    z-index: 2;
+    font-family: 'DM sans';
+    font-size: 6vw;
+    margin: 3rem 0;
+    letter-spacing: 2px;
+    font-weight: 800;
+  }
+
+  .aboutText {
+    z-index: 2;
+    margin: 0 0 2rem;
+    width: 50vw;
+    font-family: 'DM Mono';
+    line-height: 1.75;
+    font-size: 1.25rem;
+  }
+
+  .resumeButton {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    background-color: $black;
+    color: $white;
+    fill: $white;
+    border-radius: 0;
+    border: $white 2px solid;
+    margin: 2rem 0 3rem;
+    padding: 1rem 1.5rem;
+    font-family: 'DM Mono';
+    font-size: 1rem;
+    outline: inherit;
+    transition: border-radius 0.1s linear, background-color 0.1s linear, color 0.1s linear;
+    text-decoration: none;
+
+    &:hover {
+      border-radius: 15px;
+    }
+
+    &:active {
+      background-color: $white;
+      color: $black;
+      fill: $black;
+    }
+  }
+  
+  .resumeSVG {
+    fill: inherit;
+    margin: 0 0.5rem 0 0;
+  }
+}

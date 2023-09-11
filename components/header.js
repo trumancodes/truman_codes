@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import styles from '../styles/components/header.module.scss';
 
 export const siteTitle = '</truman.codes>';

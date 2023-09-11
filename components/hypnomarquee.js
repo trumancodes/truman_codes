@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
-
+import { useState } from 'react';
 import Marquee from "react-fast-marquee";
 import styles from '../styles/components/hypnomarquee.module.scss';
 
