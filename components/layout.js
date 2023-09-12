@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import Header from './header.js';
-import styles from '../styles/components/layout.module.scss';
+import Head from "next/head";
+import Header from "./header.js";
+import styles from "../styles/components/layout.module.scss";
 
-export const siteTitle = '</truman.codes>';
+export const siteTitle = "</truman.codes>";
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <>
       <Head>
@@ -12,11 +12,7 @@ export default function Layout({children}) {
         <meta name="og:title" content={siteTitle} />
       </Head>
       <Header />
-      <main className={styles.mainContainer}>
-        {children}
-      </main>
-      <footer>
-      </footer>
+      <main className={styles.mainContainer}>{children}</main>
     </>
   );
 }

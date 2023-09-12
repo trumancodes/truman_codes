@@ -1,15 +1,13 @@
 .headerWrap {
-  z-index: 99;
-  position: fixed;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
   box-sizing: border-box;
   width: 100%;
   padding: 0.5rem 1rem;
-  box-sizing: border-box;
   color: $white;
-
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: flex-start;
@@ -18,16 +16,14 @@
   .menuBtn {
     position: relative;
     box-sizing: border-box;
-    background: none;
-    color: $white;
-    border: none;
     padding: 0.5rem;
-    font: inherit;
+    background: none;
     cursor: pointer;
-
+    border: none;
+    font: inherit;
+    color: $white;
     &:nth-child(2) {
       margin: 0 0 0 auto;
-
       @media (max-width: 700px) {
         margin: 0;
       }
@@ -35,9 +31,8 @@
   }
 
   .textLogo {
-    font-family: 'VT323', monospace;
     font-size: 2.5rem;
-    
+    font-family: 'VT323', monospace;
     @media (max-width: 700px) {
       font-size: 2rem;
     }
