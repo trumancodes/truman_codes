@@ -3,6 +3,10 @@
   box-sizing: border-box;
   height: 95vh;
 
+  @media (max-width: 700px) {
+    height: 70vh;
+  }
+
   .gradientBG {
     position: absolute;
     top: -5vh;
@@ -18,6 +22,10 @@
     radial-gradient(at 89% 53%, hsla(242,100%,70%,1) 0px, transparent 50%),
     radial-gradient(at 97% 5%, hsla(340,100%,76%,1) 0px, transparent 50%);
     transform: translateY(5vh);
+
+    @media (max-width: 700px) {
+      height: 75vh;
+    }
   }
 
   .cropBox {

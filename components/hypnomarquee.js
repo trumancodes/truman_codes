@@ -15,19 +15,10 @@ export default function HypnoMarquee() {
     }
   };
 
-  const handleClick = () => {
-    if (allowMove === 'none') {
-      setAllowMove('auto')
-    } else {
-      setAllowMove('none')
-    }
-  };
-
   return (
     <section
       onMouseEnter={handleCursorMove}
       onMouseMove={handleCursorMove}
-      onClick={handleClick}
       className={`${styles.hypnoMarqueeSection} ${styles.sectionWrapper}`}
       style={{ '--hypno': `${cursorX}% ${cursorY}%`, '--cursor': `${allowMove}` }}
     >

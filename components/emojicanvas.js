@@ -19,19 +19,15 @@ export default function EmojiCanvas(props) {
     const Engine = Matter.Engine,
           Render = Matter.Render,
           World = Matter.World,
+          Body = Matter.Body,
           Bodies = Matter.Bodies,
+          Vector = Matter.Vector,
           MouseConstraint = Matter.MouseConstraint,
           Mouse = Matter.Mouse,
           Composite = Matter.Composite;
           
     setWindowW(parent.offsetWidth);
     setWindowH(parent.offsetHeight);
-
-    let timeout = false;
-    window.addEventListener('resize', () => {
-      clearTimeout(timeout);
-      timeout = setTimeout(handleResize(parent), 250);
-    });
 
     const engine = Engine.create();
     const context = canvas.getContext('2d');
@@ -47,10 +43,22 @@ export default function EmojiCanvas(props) {
     Engine.run(engine);
     Render.run(render);
 
-    const ground = Bodies.rectangle(parent.offsetWidth/2, parent.offsetHeight+26, parent.offsetWidth, 50, { isStatic: true }, {fillStyle: 'transparent'});
-    const leftWall = Bodies.rectangle(-26, parent.offsetHeight+26, 50, parent.offsetHeight*3, { isStatic: true }, {fillStyle: 'transparent'});
-    const rightWall = Bodies.rectangle(parent.offsetWidth+26, parent.offsetHeight+26, 50, parent.offsetHeight*3, { isStatic: true }, {fillStyle: 'transparent'});
+    let ground = Bodies.rectangle(parent.offsetWidth/2, parent.offsetHeight+26, parent.offsetWidth * 2, 50, { isStatic: true }, {fillStyle: 'transparent'});
+    let leftWall = Bodies.rectangle(-26, parent.offsetHeight+26, 50, parent.offsetHeight*3, { isStatic: true }, {fillStyle: 'transparent'});
+    let rightWall = Bodies.rectangle(parent.offsetWidth+26, parent.offsetHeight+26, 50, parent.offsetHeight*3, { isStatic: true }, {fillStyle: 'transparent'});
     World.add(engine.world, [ground, leftWall, rightWall]);
+
+    let timeout = false;
+    window.addEventListener('resize', () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        handleResize(parent)
+        Body.setPosition(ground, Vector.create(parent.offsetWidth/2, parent.offsetHeight+26))
+        Body.setPosition(leftWall, Vector.create(-26, parent.offsetHeight+26))
+        Body.setPosition(rightWall, Vector.create(parent.offsetWidth+26, parent.offsetHeight+26))
+      }
+      , 250);
+    });
     
     const mouse = Mouse.create(render.canvas),
     mouseConstraint = MouseConstraint.create(engine, {
@@ -74,7 +82,7 @@ export default function EmojiCanvas(props) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     };
   
-    emojiSpots.forEach(emojiSpot => {
+    emojiSpots.forEach((emojiSpot) => {
       emojiSpot.addEventListener('mouseover', (e) => {
         let dropSpot = 0
 
@@ -102,6 +110,8 @@ export default function EmojiCanvas(props) {
       
           World.add(engine.world, [emojiBody]);
           usedEmojis.push(emoji);
+
+          emojiSpot.style.background = 'none';
         }
       });
     });

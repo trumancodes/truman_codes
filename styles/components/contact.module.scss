@@ -4,8 +4,14 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
-  padding: 85px;
+  padding: 5rem;
   background-color: var(--primary);
+  transition: background-color 0.1s linear;
+
+  @media (max-width: 700px) {
+    align-items: center;
+    padding: 4rem;
+  }
 
   .contactH2 {
     z-index: 2;
@@ -30,7 +36,6 @@
     font-family: 'VT323', monospace;
     font-size: 6vw;
     font-style: normal;
-    outline: inherit;
     transition: background-color 0.1s linear, font-style 0.1s linear;
 
     &::after {
@@ -72,8 +77,11 @@
   .shuffleButton {
     cursor: pointer;
     position: absolute;
-    bottom: 40px;
-    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 2rem;
+    right: 2rem;
     background-color: transparent;
     border-width: 0;
     font-family: inherit;
@@ -84,15 +92,15 @@
     padding: 0;
     mix-blend-mode: overlay;
     opacity: 0.3;
-    transition: padding-bottom 0.1s linear, opacity 0.1s linear;
+    transition: bottom 0.1s linear, opacity 0.1s linear;
 
     &:hover {
-      padding-bottom: 5px;
+      bottom: 2.25rem;
       opacity: 0.5;
     }
 
     &:active {
-      padding-bottom: 8px;
+      bottom: 2.5rem;
       opacity: 0.7;
     }
   }
@@ -115,6 +123,11 @@
     0 0 0 34px $white;
     background: var(--secondary);
     z-index: 1;
+    transition: background-color 0.1s linear;
+
+    @media (max-width: 700px) {
+      height: 70vh;
+    }
 
     &::after {
       content: '';

@@ -9,6 +9,10 @@
   min-height: 100vh;
   padding: 3rem 0;
 
+  @media (max-width: 700px) {
+    padding: 1rem 0;
+  }
+
   .aboutCanvas {
     position: absolute;
     z-index: 1;
@@ -19,15 +23,29 @@
     height: 6vw;
     width: 6vw;
     margin: 0 1.5rem;
+
+    @media (max-width: 700px) {
+      height: 10vw;
+      width: 10vw;
+      margin: 0 1rem;
+    }
   }
 
   .aboutH2 {
     z-index: 2;
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
     font-family: 'DM sans';
     font-size: 6vw;
-    margin: 3rem 0;
-    letter-spacing: 2px;
+    letter-spacing: 0.1rem;
     font-weight: 800;
+
+    @media (max-width: 700px) {
+      margin: 2rem 0;
+      font-size: 7.5vw;
+      letter-spacing: 0.1rem;
+    }
   }
 
   .aboutText {
@@ -37,6 +55,10 @@
     font-family: 'DM Mono';
     line-height: 1.75;
     font-size: 1.25rem;
+
+    @media (max-width: 700px) {
+      width: 75vw;
+    }
   }
 
   .resumeButton {
@@ -54,7 +76,6 @@
     padding: 1rem 1.5rem;
     font-family: 'DM Mono';
     font-size: 1rem;
-    outline: inherit;
     transition: border-radius 0.1s linear, background-color 0.1s linear, color 0.1s linear;
     text-decoration: none;
 
@@ -72,5 +93,10 @@
   .resumeSVG {
     fill: inherit;
     margin: 0 0.5rem 0 0;
+  }
+
+  .emojiSpot {
+    background-color: rgba($white, 0.1);
+    transition: background-color 0.1s linear;
   }
 }
