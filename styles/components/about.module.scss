@@ -35,7 +35,7 @@
     z-index: 2;
     margin: 3rem 0;
     font-size: 6vw;
-    font-family: 'DM sans';
+    font-family: $sans;
     font-weight: 800;
     letter-spacing: 0.1rem;
     @media (max-width: 700px) {
@@ -50,7 +50,7 @@
     width: 50vw;
     margin: 0 0 2rem;
     font-size: 1.25rem;
-    font-family: 'DM Mono';
+    font-family: $mono;
     line-height: 1.75;
     @media (max-width: 700px) {
       width: 75vw;
@@ -71,7 +71,7 @@
     border: $white 2px solid;
     border-radius: 0;
     font-size: 1rem;
-    font-family: 'DM Mono';
+    font-family: $mono;
     color: $white;
     text-decoration: none;
     &:hover {
