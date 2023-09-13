@@ -75,7 +75,7 @@
     color: $white;
     text-decoration: none;
     &:hover {
-      border-radius: 15px;
+      border-radius: 50px;
     }
 
     &:active {
@@ -91,7 +91,9 @@
   }
 
   .emojiSpot {
+    padding: 0.5rem 1rem;
     transition: background-color 0.1s linear;
-    background-color: rgba($white, 0.1);
+    background-color: rgba($white, 0.25);
+    border-radius: 50px;
   }
 }

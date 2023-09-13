@@ -65,8 +65,8 @@ export default function Contact() {
           title="Copy my email address"
         >
           hello@truman.codes
-          <span className={styles.copyText}>{copyText}</span>
         </button>
+        <span className={styles.copyText} onClick={copyEmail}>{copyText}</span>
       </span>
       <button
         className={styles.shuffleButton}
