@@ -32,6 +32,10 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#6b66ff" />
         <meta name="theme-color" content="#6b66ff" />
+        <meta
+          name="description"
+          content="Explore the dynamic portfolio of Truman, a multidisciplinary creative leader and developer based in Venice Beach. Specializing in UI/UX design, software engineering, and more. Creating digital solutions that engage and inspire."
+        ></meta>
         <title>{siteTitle}</title>
       </Head>
       <Hero />
