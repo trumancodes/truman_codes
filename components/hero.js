@@ -49,6 +49,7 @@ export default function Hero() {
           ref={(el) => {
             starsL = el;
           }}
+          sizes="110vh"
         />
         <Image
           priority
@@ -58,6 +59,7 @@ export default function Hero() {
           ref={(el) => {
             aiProfile = el;
           }}
+          sizes="50vw"
         />
         <Image
           priority
@@ -67,6 +69,7 @@ export default function Hero() {
           ref={(el) => {
             starsR = el;
           }}
+          sizes="50vw"
         />
       </span>
     </section>

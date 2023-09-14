@@ -9,6 +9,7 @@ export default function About() {
       <h2 className={styles.aboutH2}>
         Hi! I&apos;m Truman
         <Image
+          priority
           className={styles.aboutWave}
           src={waveEmoji}
           alt="Waving Hand Emoji"

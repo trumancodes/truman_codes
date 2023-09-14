@@ -112,7 +112,7 @@ export default function EmojiCanvas(props) {
       "DOMMouseScroll",
       mouseConstraint.mouse.mousewheel
     );
-    
+
     Composite.add(engine.world, mouseConstraint);
 
     const emojiSpots = [...document.getElementsByClassName("emojiSpot")];
@@ -155,7 +155,7 @@ export default function EmojiCanvas(props) {
           usedEmojis.push(emoji);
           emojiSpot.style.background = "none";
         }
-      });
+      }, {passive: true});
     });
   }, []);
 
