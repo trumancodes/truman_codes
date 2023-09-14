@@ -42,14 +42,14 @@ export default function Home() {
       <HypnoMarquee />
       <About />
       <Contact />
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-FZ2D4M94EZ" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-9T8SYM7X1T" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'G-FZ2D4M94EZ');
+          gtag('config', 'G-9T8SYM7X1T');
         `}
       </Script>
     </Layout>
