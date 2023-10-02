@@ -22,11 +22,16 @@
     border: none;
     font: inherit;
     color: $white;
+    transition: font-style 0.1s linear;
     &:nth-child(2) {
       margin: 0 0 0 auto;
       @media (max-width: 700px) {
         margin: 0;
       }
+    }
+
+    &:hover {
+      font-style: italic;
     }
   }
 
