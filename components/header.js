@@ -1,9 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import styles from "../styles/components/header.module.scss";
 
-export const siteTitle = "</truman.codes>";
-
-export default function Header() {
+export default function Header({ pageHeaderClassName }) {
   const handleScroll = (sectionName) => {
     const section = document.getElementById(sectionName);
     section?.scrollIntoView({
@@ -12,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.headerWrap}>
+    <header className={`${styles.headerWrap} ${pageHeaderClassName}`}>
       <button
         className={styles.menuBtn}
         onClick={() => handleScroll("hero")}
