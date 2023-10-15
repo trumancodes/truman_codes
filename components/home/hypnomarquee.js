@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import styles from "../styles/components/hypnomarquee.module.scss";
+import styles from "../../styles/components/hypnomarquee.module.scss";
 
 export default function HypnoMarquee() {
   const [cursorX, setCursorX] = useState(50);

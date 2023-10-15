@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/components/contact.module.scss";
+import styles from "../../styles/components/contact.module.scss";
 
 const colorPairs = [
   ["#5a4c87", "#acc8e1"],

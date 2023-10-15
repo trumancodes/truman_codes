@@ -1,0 +1,58 @@
+.squareContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $purple;
+  aspect-ratio: 1;
+}
+
+.s001Renderer {
+  position: relative;
+  background-color: white;
+}
+
+.s001Capturer {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .05);
+  border: solid 3px rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+
+.s001button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2rem;
+  right: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  line-height: 1;
+  font-weight: 900;
+  font-family: $mono;
+  color: $black;
+  background-color: $green;
+  border: 0;
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+  cursor: pointer;
+
+  &:hover {
+    &::after {
+      background-color: rgba(0, 0, 0, .03);
+    }
+  }
+
+  &:active {
+    &::after {
+      background-color: rgba(0, 0, 0, .06);
+    }
+  }
+}

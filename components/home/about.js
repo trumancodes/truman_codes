@@ -1,7 +1,7 @@
 import Image from "next/image";
 import EmojiCanvas from "./emojicanvas";
-import waveEmoji from "../public/images/wave.png";
-import styles from "../styles/components/about.module.scss";
+import waveEmoji from "../../public/images/wave.png";
+import styles from "../../styles/components/about.module.scss";
 
 export default function About() {
   return (

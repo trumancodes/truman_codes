@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
-import starsLImg from "../public/images/stars_l.png";
-import starsRImg from "../public/images/stars_r.png";
-import aiProfileImg from "../public/images/ai-profile.png";
-import styles from "../styles/components/hero.module.scss";
+import starsLImg from "../../public/images/stars_l.png";
+import starsRImg from "../../public/images/stars_r.png";
+import aiProfileImg from "../../public/images/ai-profile.png";
+import styles from "../../styles/components/hero.module.scss";
 
 export default function Hero() {
   let container = useRef();
